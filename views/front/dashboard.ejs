@@ -1,0 +1,352 @@
+<%- include('../front/header.ejs') %>
+
+  <!-- start container-fluid -->
+  <div class="container-fluid back">
+  </div>
+  <!-- end container-fluid -->
+
+  <!-- start container-fluid -->
+  <div class="container-fluid a">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 style="text-align:center;">welcome <%= n %><br>
+            Register Your Course</h1><br>
+        <h6 style="text-align:center;">Course Registration means the official recording of a student's name to study a
+          course or courses.</h6>
+      </div>
+    </div><br><br>
+    <!-- start container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="card" style="width: 18rem;">
+            <img src="https://www.besonline.in/blog/wp-content/uploads/2018/12/mba-admission.jpg" class="card-img-top"
+              height="250px" alt="mba_img">
+            <div class="card-body">
+              <h5 class="card-title">MBA</h5>
+              <p class="card-text">MBA is a post-graduation degree in management.</p>
+
+              <% if(a) { %>
+                <a href="/display" class="btn btn-info">Display</a>
+                <% } else { %>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                    REGISTER</button>
+                  <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img src="https://collegevidya.com/admin/mailimg/mtech%20for%20working%20professional.jpg"
+              class="card-img-top" height="250px;" alt="mtech_img">
+            <div class="card-body">
+              <h5 class="card-title">M.TECH</h5>
+              <p class="card-text">M.Tech is a post-graduation degree in engineering</p>
+              <% if(m) { %>
+                <a href="/display" class="btn btn-info">Display</a>
+                
+                <% } else { %>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    REGISTER</button>
+                  <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img
+              src="https://5.imimg.com/data5/SELLER/Default/2020/9/ST/CV/SC/9214630/admission-open-in-b-tech-2020-500x500.jpg"
+              class="card-img-top" style="height:250px;" alt="btach_img">
+            <div class="card-body">
+              <h5 class="card-title">B.TECH</h5>
+              <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
+              <!-- Button trigger modal -->
+              <% if(b) { %>
+                <a href="/display" class="btn btn-info">Display</a>
+                
+                <% } else { %>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    REGISTER</button>
+                  <% } %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end container -->
+
+  </div>
+  <!-- end container-fluid -->
+
+  <!-- modal  start mba(1) -->
+  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register Your Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- formstart -->
+          <form action="/course_insert" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Name</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Email</label>
+              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
+              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+                placeholder="9446468855">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Address</label>
+              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+                placeholder="gwalior"></textarea>
+            </div>
+
+            <!-- gender -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">Male</label>
+
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="female" type="radio" name="gender" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">Female</label>
+            </div><br>
+            <!-- gender end -->
+
+            <!--select start -->
+            <label for="formGroupExampleInput2" class="form-label">College</label>
+            <select class="form-select" aria-label="Default select example" name="college">
+              <option selected>Select College</option>
+              <option value="ITM">ITM</option>
+              <option value="JIWAJI UNIVERSITY">JIWAJI UNIVERSITY</option>
+              <option value="MITS">MITS</option>
+              <option value="AMITY UNIVERSITY">AMITY UNIVERSITY</option>
+              <option value="SHRIRAM COLLEGE">SHRIRAM COLLEGE</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Course</label>
+            <select class="form-select" aria-label="Default select example" name="course">
+              <option selected>select Course</option>
+              <option value="MBA">MBA</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Branch</label>
+            <select class="form-select" aria-label="Default select example" name="branch" type="branch">
+              <option selected>select Branch</option>
+              <option value="IT">IT</option>
+              <option value="CS">CS</option>
+              <option value="EE">EE</option>
+              <option value="EC">EC</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+            <!-- select end -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- formend -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- modal form end -->
+
+  <!-- modal  start M.tech (2) -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register Your Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- formstart -->
+          <form action="/course_insert" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Name</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Email</label>
+              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
+              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+                placeholder="9446468855">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Address</label>
+              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+                placeholder="gwalior"></textarea>
+            </div>
+
+            <!-- gender -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">Male</label>
+
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="female" type="radio" name="gender" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">Female</label>
+            </div><br>
+            <!-- gender end -->
+            <!--select start -->
+            <label for="formGroupExampleInput2" class="form-label">College</label>
+            <select class="form-select" aria-label="Default select example" name="college">
+              <option selected>Select College</option>
+              <option value="ITM">ITM</option>
+              <option value="JIWAJI UNIVERSITY">JIWAJI UNIVERSITY</option>
+              <option value="MITS">MITS</option>
+              <option value="AMITY UNIVERSITY">AMITY UNIVERSITY</option>
+              <option value="SHRIRAM COLLEGE">SHRIRAM COLLEGE</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Course</label>
+            <select class="form-select" aria-label="Default select example" name="course">
+              <option selected>select Course</option>
+              <option value="M.TECH">M.TECH</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Branch</label>
+            <select class="form-select" aria-label="Default select example" name="branch" type="branch">
+              <option selected>select Branch</option>
+              <option value="IT">IT</option>
+              <option value="CS">CS</option>
+              <option value="EE">EE</option>
+              <option value="EC">EC</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+            <!-- select end -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- formend -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- modal form end -->
+
+  <!-- modal  start 3 b.tech-->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register Your Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- formstart -->
+          <form action="/course_insert" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput" class="form-label">Name</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+                placeholder="shareen">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Email</label>
+              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
+              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+                placeholder="9446468855">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupExampleInput2" class="form-label">Address</label>
+              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+                placeholder="gwalior"></textarea>
+            </div>
+
+            <!-- gender -->
+
+            <!-- gender -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" value="male" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">Male</label>
+
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" value="female" type="radio" name="gender" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">Female</label>
+            </div><br>
+            <!-- gender end -->
+            <!--select start -->
+            <label for="formGroupExampleInput2" class="form-label">College</label>
+            <select class="form-select" aria-label="Default select example" name="college">
+              <option selected>Select College</option>
+              <option value="ITM">ITM</option>
+              <option value="JIWAJI UNIVERSITY">JIWAJI UNIVERSITY</option>
+              <option value="MITS">MITS</option>
+              <option value="AMITY UNIVERSITY">AMITY UNIVERSITY</option>
+              <option value="SHRIRAM COLLEGE">SHRIRAM COLLEGE</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Course</label>
+            <select class="form-select" aria-label="Default select example" name="course">
+              <option selected>select Course</option>
+              <option value="B.TECH">B.TECH</option>
+            </select>
+
+            <label for="formGroupExampleInput2" class="form-label">Branch</label>
+            <select class="form-select" aria-label="Default select example" name="branch" type="branch">
+              <option selected>select Branch</option>
+              <option value="IT">IT</option>
+              <option value="CS">CS</option>
+              <option value="EE">EE</option>
+              <option value="EC">EC</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+            <!-- select end -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <!-- formend -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- modal form end -->
+
+  <%- include('../front/footer.ejs') %>

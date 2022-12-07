@@ -1,0 +1,46 @@
+<%- include('../front/header.ejs') %>
+
+<div class="container-fluid">
+    <div class="container">
+        <form action="/courseupdate/<%= editdata._id %>" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Name</label>
+            <input type="text" class="form-control"  value="<%=editdata.name %>"  name="name" id="formGroupExampleInput">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2"  class="form-label">Email</label>
+            <input type="text" class="form-control"  value="<%=editdata.email %>"  name="email" id="formGroupExampleInput2">
+          </div>
+          
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Course</label>
+            <input type="text" class="form-control"  value="<%=editdata.course %>"  name="course" id="formGroupExampleInput2">
+          </div>
+          
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">College</label>
+            <input type="text" class="form-control"  value="<%=editdata.college %>"  name="college" id="formGroupExampleInput2" >
+          </div>
+          
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Branch</label>
+            <input type="text" class="form-control"  value="<%=editdata.branch %>"  name="branch" id="formGroupExampleInput2">
+          </div>
+          
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Mobile</label>
+            <input type="text" class="form-control"  value="<%=editdata.number %>"  name="number" id="formGroupExampleInput2">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Gender</label>
+            <input type="text" class="form-control"  value="<%=editdata.gender %>"  name="gender" id="formGroupExampleInput2" >
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+    </div>
+</div>
+  
+
+<%- include('../front/footer.ejs') %>

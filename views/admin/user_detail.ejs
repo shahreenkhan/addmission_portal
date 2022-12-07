@@ -1,0 +1,40 @@
+<%- include('./header.ejs') %>
+
+<div class="content mt-3">
+    <div class="container">
+        <a href="/admin/dashboard" class="btn btn-info">Back To Dashboard</a>
+        <h1 class="text-center"
+        style="color: black; font-family: 'Raleway',sans-serif; font-size: 43px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;">
+      USER DETAILS</h1>
+    <hr>
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% d.forEach((item)=>{ %>
+                    <tr>
+                        <td><%= item._id %></td>
+                        <td><%=  item.name %></td>
+                        <td><%= item.email %></td>
+                        <td>
+                            <a href="/admin/viewuser_detail/<%= item._id %>" class="btn btn-info">view</a>
+                           
+                            <!-- <a href="/admin/userdelete/<%= item._id %>" class="btn btn-danger">delete</a> -->
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        
+          </table>
+     </div>
+     
+
+
+
+</div> <!-- .content -->

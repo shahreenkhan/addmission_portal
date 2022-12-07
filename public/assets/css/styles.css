@@ -1,0 +1,52 @@
+
+.back{
+  background-image: url('https://image.shutterstock.com/image-vector/young-mix-race-students-group-260nw-1460612837.jpg');
+  height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+/* navbar */
+.navFontStyle{
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  position: relative;
+  padding: 1.5rem;
+}
+.navlink{
+color: #aaa;
+}   
+h1 {
+padding: 10px 0;
+font-size: 32px;
+font-weight: 300;
+text-align: center;
+}
+p {
+font-size: 12px;
+}
+hr {
+color: #a9a9a9;
+opacity: 0.3;
+}
+button {
+width: 100%;
+padding: 10px 0;
+margin: 10px auto;
+border-radius: 5px; 
+border: none;
+background: #d849b588; 
+font-size: 14px;
+font-weight: 600;
+color: #fff;
+}
+button:hover {
+background: #d849b588;
+}
+.plus .add:hover {
+  background-color: rgba(180, 190, 203, 0.4);
+}
+.ad{
+  background: radial-gradient(circle, rgba(44,38,38,1) 0%, rgba(151,117,130,1) 100%);
+}

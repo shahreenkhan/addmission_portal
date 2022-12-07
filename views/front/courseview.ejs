@@ -1,0 +1,46 @@
+<%- include('../front/header.ejs') %>
+<div class="container-fluid">
+    <div class="container"><br>
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="alert alert-success text-center">DETAIL</h3>
+        </div>
+      </div><br><br>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NO.</th>
+      <th scope="col">USERNAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">CONTACT</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">COMMENT</th>
+      <th scope="col">COURSE</th>
+      <th scope="col">BRANCH</th>
+      <th scope="col">COLLEGE</th>
+      <th scope="col">GENDER</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= viewdata._id %></th>
+      <td><%= viewdata.name %></td>
+      <td><%= viewdata.email %></td>
+      <td><%= viewdata.number %></td>
+      <td><%= viewdata.status %></td>
+      <td><%= viewdata.comment %></td>
+      <td><%= viewdata.course %></td>
+      <td><%= viewdata.branch %></td>
+      <td><%= viewdata.college %></td>
+      <td><%= viewdata.gender %></td>
+    </tr>
+  </tbody>
+</table>
+<center>
+  <a href="/display" class="btn btn-warning">Back to display</a>
+</center>
+    </div>
+</div>
+
+<%- include('../front/footer.ejs') %>

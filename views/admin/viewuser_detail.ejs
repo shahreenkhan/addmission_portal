@@ -1,0 +1,36 @@
+<%- include('./header.ejs') %>
+
+ <!-- Right Panel -->
+ <div class="content mt-3">
+        <div class="container">
+            <a href="/admin/dashboard" class="btn btn-info">Back To Dashboard</a>
+            <h1 class="text-center"
+            style="color: black; font-family: 'Raleway',sans-serif; font-size: 43px; font-weight: 600; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;">
+           User Information</h1>
+        <hr>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><%= d.name %></td>
+                    <td><%= d.email %></td>
+                    <td><%= d.mobile %></td>
+                  </tr>
+    
+                </tbody>
+              </table>
+         </div>
+        
+
+
+
+    </div> <!-- .content -->
