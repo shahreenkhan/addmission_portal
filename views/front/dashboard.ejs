@@ -1,74 +1,106 @@
 <%- include('../front/header.ejs') %>
 
   <!-- start container-fluid -->
-  <div class="container-fluid back">
+  <div class="container-fluid">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/assets/images/slider3.jpg" class="d-block w-100" alt="slider1">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/images/slider2.png" class="d-block w-100" alt="slider2">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/images/slider1.jpg" class="d-block w-100" alt="slider3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
-  <!-- end container-fluid -->
+<!-- end container-fluid -->
+
+<!-- start container -->
+<div class="upper-div">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,240C320,245,400,203,480,192C560,181,640,203,720,197.3C800,192,880,160,960,154.7C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+</div>
+<div class="mainDivv">
+  <h1>Welcome <%= n %></h1>
+  <h1>Register Your Course</h1>
+  <p>Course Registration means the official recording of a student's name to study a
+    course or courses</p>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,240C320,245,400,203,480,192C560,181,640,203,720,197.3C800,192,880,160,960,154.7C1040,149,1120,171,1200,170.7C1280,171,1360,149,1400,138.7L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+</div>
+<!-- end container -->
 
   <!-- start container-fluid -->
   <div class="container-fluid a">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 style="text-align:center;">welcome <%= n %><br>
-            Register Your Course</h1><br>
-        <h6 style="text-align:center;">Course Registration means the official recording of a student's name to study a
-          course or courses.</h6>
-      </div>
-    </div><br><br>
     <!-- start container -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 shadow p-5">
           <div class="card" style="width: 18rem;">
-            <img src="https://www.besonline.in/blog/wp-content/uploads/2018/12/mba-admission.jpg" class="card-img-top"
+            <img src="/assets/images/mba.jpg" class="card-img-top"
               height="250px" alt="mba_img">
             <div class="card-body">
               <h5 class="card-title">MBA</h5>
               <p class="card-text">MBA is a post-graduation degree in management.</p>
 
               <% if(a) { %>
-                <a href="/display" class="btn btn-info">Display</a>
+                <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
                 <% } else { %>
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                  <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background: rgba(238,174,202,1)">
                     REGISTER</button>
                   <% } %>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 shadow p-5">
           <div class="card" style="width: 18rem;">
-            <img src="https://collegevidya.com/admin/mailimg/mtech%20for%20working%20professional.jpg"
-              class="card-img-top" height="250px;" alt="mtech_img">
+            <img
+              src="/assets/images/mtech.jpg"
+              class="card-img-top" style="height:250px;" alt="btach_img">
             <div class="card-body">
               <h5 class="card-title">M.TECH</h5>
               <p class="card-text">M.Tech is a post-graduation degree in engineering</p>
               <% if(m) { %>
-                <a href="/display" class="btn btn-info">Display</a>
+                <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
                 
                 <% } else { %>
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                  <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="background: rgba(238,174,202,1)">
                     REGISTER</button>
                   <% } %>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 shadow p-5">
           <div class="card" style="width: 18rem;">
             <img
-              src="https://5.imimg.com/data5/SELLER/Default/2020/9/ST/CV/SC/9214630/admission-open-in-b-tech-2020-500x500.jpg"
+              src="/assets/images/bteach.jpg"
               class="card-img-top" style="height:250px;" alt="btach_img">
             <div class="card-body">
               <h5 class="card-title">B.TECH</h5>
               <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
               <!-- Button trigger modal -->
               <% if(b) { %>
-                <a href="/display" class="btn btn-info">Display</a>
+                <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
                 
                 <% } else { %>
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                  <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="background: rgba(238,174,202,1)">
                     REGISTER</button>
                   <% } %>
 
@@ -79,8 +111,150 @@
     </div>
     <!-- end container -->
 
+
+ <!-- start container -->
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img src="/assets/images/mba.jpg" class="card-img-top"
+          height="250px" alt="mba_img">
+        <div class="card-body">
+          <h5 class="card-title">MBA</h5>
+          <p class="card-text">MBA is a post-graduation degree in management.</p>
+
+          <% if(a) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img
+          src="/assets/images/mtech.jpg"
+          class="card-img-top" style="height:250px;" alt="btach_img">
+        <div class="card-body">
+          <h5 class="card-title">M.TECH</h5>
+          <p class="card-text">M.Tech is a post-graduation degree in engineering</p>
+          <% if(m) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img
+          src="/assets/images/bteach.jpg"
+          class="card-img-top" style="height:250px;" alt="btach_img">
+        <div class="card-body">
+          <h5 class="card-title">B.TECH</h5>
+          <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
+          <!-- Button trigger modal -->
+          <% if(b) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end container -->
+
+ <!-- start container -->
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img src="/assets/images/bba.png" class="card-img-top"
+          height="250px" alt="bba_img">
+        <div class="card-body">
+          <h5 class="card-title">BBA</h5>
+          <p class="card-text">BBA is a graduation degree in management.</p>
+
+          <% if(a) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img
+          src="/assets/images/msc.jpg"
+          class="card-img-top" style="height:250px;" alt="btach_img">
+        <div class="card-body">
+          <h5 class="card-title">M.SC.</h5>
+          <p class="card-text">M.Sc. is a post-graduation degree.</p>
+          <% if(m) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4 shadow p-5">
+      <div class="card" style="width: 18rem;">
+        <img
+          src="/assets/images/bteach.jpg"
+          class="card-img-top" style="height:250px;" alt="btach_img">
+        <div class="card-body">
+          <h5 class="card-title">B.COM</h5>
+          <p class="card-text">B.COM is a professional undergraduate.</p>
+          <!-- Button trigger modal -->
+          <% if(b) { %>
+            <a href="/display" class="btn" style="background: rgba(148,187,233,1);">Display</a>
+            
+            <% } else { %>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="background: rgba(238,174,202,1)">
+                REGISTER</button>
+              <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end container -->
+
+
   </div>
   <!-- end container-fluid -->
+
+  <!-- start container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12" style="height: 8rem;">
+
+      </div>
+    </div>
+  </div>
+  <!-- end container -->
 
   <!-- modal  start mba(1) -->
   <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,26 +268,26 @@
           <!-- formstart -->
           <form action="/course_insert" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+              <input type="hidden" class="form-control  fom-c" id="formGroupExampleInput" name="user_id" value="<%= id %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Name</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+              <input type="text" class="form-control fom-c" id="formGroupExampleInput" name="name" value="<%= n %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Email</label>
-              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+              <input type="text" class="form-control fom-c" name="email" id="formGroupExampleInput2" value="<%= e %>">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
-              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+              <input type="text" class="form-control fom-c" name="number" id="formGroupExampleInput2"
                 placeholder="9446468855">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Address</label>
-              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+              <textarea type="text" class="form-control fom-c" name="address" id="formGroupExampleInput2"
                 placeholder="gwalior"></textarea>
             </div>
 
@@ -183,26 +357,26 @@
           <!-- formstart -->
           <form action="/course_insert" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+              <input type="hidden" class="form-control fom-c" id="formGroupExampleInput" name="user_id" value="<%= id %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Name</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+              <input type="text" class="form-control fom-c" id="formGroupExampleInput" name="name" value="<%= n %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Email</label>
-              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+              <input type="text" class="form-control fom-c" name="email" id="formGroupExampleInput2" value="<%= e %>">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
-              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+              <input type="text" class="form-control fom-c" name="number" id="formGroupExampleInput2"
                 placeholder="9446468855">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Address</label>
-              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+              <textarea type="text" class="form-control fom-c" name="address" id="formGroupExampleInput2"
                 placeholder="gwalior"></textarea>
             </div>
 
@@ -271,26 +445,26 @@
           <!-- formstart -->
           <form action="/course_insert" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-              <input type="hidden" class="form-control" id="formGroupExampleInput" name="user_id" value="<%= id %>"
+              <input type="hidden" class="form-control fom-c" id="formGroupExampleInput" name="user_id" value="<%= id %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label">Name</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" name="name" value="<%= n %>"
+              <input type="text" class="form-control fom-c" id="formGroupExampleInput" name="name" value="<%= n %>"
                 placeholder="shareen">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Email</label>
-              <input type="text" class="form-control" name="email" id="formGroupExampleInput2" value="<%= e %>">
+              <input type="text" class="form-control fom-c" name="email" id="formGroupExampleInput2" value="<%= e %>">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Mobile Number</label>
-              <input type="text" class="form-control" name="number" id="formGroupExampleInput2"
+              <input type="text" class="form-control fom-c" name="number" id="formGroupExampleInput2"
                 placeholder="9446468855">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput2" class="form-label">Address</label>
-              <textarea type="text" class="form-control" name="address" id="formGroupExampleInput2"
+              <textarea type="text" class="form-control fom-c" name="address" id="formGroupExampleInput2"
                 placeholder="gwalior"></textarea>
             </div>
 

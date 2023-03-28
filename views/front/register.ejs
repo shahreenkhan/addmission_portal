@@ -396,6 +396,7 @@ form.sign-in-form {
   form {
     padding: 0 1.5rem;
   }
+  
 
   .image {
     display: none;
@@ -419,6 +420,25 @@ form.sign-in-form {
 
 
 }
+
+.m_logo{
+  display: none;
+}
+.w_logo{
+  font-weight: 700;
+  font-size: 3rem;
+}
+@media(max-width: 600px){
+.m_logo{
+  display: block;
+  margin-left: -26px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.w_logo{
+  display: none;
+  }
+}
     </style>
     <title>Admission Portal</title>
   </head>
@@ -437,6 +457,7 @@ form.sign-in-form {
               <input type="password" name="password" placeholder="Password" />
             </div>
             <button class="btn solid" type="submit">Sign in</button>
+            <a href="">Forget Passowrd</a>
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -445,7 +466,7 @@ form.sign-in-form {
               <a href="#" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="/auth/google" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
               <a href="#" class="social-icon">
@@ -485,7 +506,7 @@ form.sign-in-form {
               <a href="#" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="/auth/google" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
               <a href="#" class="social-icon">
@@ -500,24 +521,31 @@ form.sign-in-form {
         <div class="panel left-panel">
           <div class="content">
             <!-- <h3>New here ?</h3> -->
-            <img src="/assets/images/logo.png" style="height: 120px;" alt="logo">
+            <!-- <img src="/assets/images/logo.png"  class="w_logo" alt="fulllogo"> -->
+            <!-- <img src="/assets/images/logo.png"  class="m_logo" alt="responsivelogo"> -->
+            <h1 class="w_logo" >Admission Portal</h1><button class="btn transparent web" class="margin-left:-29px;" id="sign-up-btn">
+              Sign up
+            </button>
+            <h1 class="m_logo">Admission Portal</h1>
           <h1>
+            
             <% if(message.length > 0){ %>
               <div class="alert alert-danger">
                   <%= message %>
               </div>
           <% } %>
          
-       <br><br> </h1>
-            <button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button>
+       </h1>
+          
+    
           </div>
           <img src="/assets/images/log.svg" class="image" alt="svgimg1" />
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <img src="/assets/images/logo.png" style="height: 120px;" alt="logo">
+            <!-- <img src="/assets/images/logo.png" style="height: 120px;" alt="logo"> -->
+            <h1 class="w_logo" >Admission Portal</h1>
+            <h1 class="m_logo">Admission Portal</h1>
             <button class="btn transparent" id="sign-in-btn">
               Sign in
             </button>

@@ -1,0 +1,145 @@
+<%- include('../front/header.ejs') %>
+
+ <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgba(34, 34, 34, 0.403);
+}
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container .heading {
+    width: 40%;
+}
+
+.container .heading h3 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin: 3rem 0;
+    border-bottom: 3px solid #222;
+    padding-bottom: 10px;
+}
+
+.container .heading span {
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding: 3px 10px;
+    background: #fff;
+    color: #000;
+}
+
+.box {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .box .col {
+    display: flex;
+    flex-direction: column;
+    width: 32.6%;
+}
+
+
+.full-img {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.full-img img {
+    width: 50%;
+}
+
+.full-img span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 3px 9px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.full-img span:hover {
+    background: #fff;
+    color: #000;
+}
+ </style>
+ 
+    <!-- start container -->
+  <div class="container">
+    <div class="heading">
+      <h3>Photo <span>Gallery</span></h3>
+    </div>
+    <div class="full-img" id="full">
+      <img src="https://images.unsplash.com/photo-1673886138232-e792a8839827?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUwNzM4MTc&ixlib=rb-4.0.3&q=80" id="fullImg">
+      <span onclick="closeFullImg()">X</span>
+    </div>
+    <div class="box">
+      <div class="col">
+        <img src="/assets/images/gal1.jpg" onclick="openFullImg(this.src)">
+        
+        <img src="/assets/images/gal2.jpg" onclick="openFullImg(this.src)">
+        
+        <img src="/assets/images/gal5.jpg" onclick="openFullImg(this.src)">
+        <img src="/assets/images/gal6.webp" onclick="openFullImg(this.src)">
+        <img src="/assets/images/gal3.webp" onclick="openFullImg(this.src)">
+      </div>
+      
+      <div class="col">
+        <img src="/assets/images/gal4.avif" onclick="openFullImg(this.src                                                          )">
+        <img src="/assets/images/gal7.jpg" onclick="openFullImg(this.src)">
+        <img src="/assets/images/gal8.png" onclick="openFullImg(this.src)">
+        <img src="/assets/images/gal10.jpg" onclick="openFullImg(this.src)">
+      </div>
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1674269138960-9de1a9ddc587?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUwNzM5OTU&ixlib=rb-4.0.3&q=80" onclick="openFullImg(this.src)">
+        <img src="https://images.unsplash.com/photo-1672901337632-5e890d6b58f9?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUwNzQxMjE&ixlib=rb-4.0.3&q=80" onclick="openFullImg(this.src)">
+        <img src="https://images.unsplash.com/photo-1674584946360-fe8d2daea167?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUwNzM5OTU&ixlib=rb-4.0.3&q=80" onclick="openFullImg(this.src)">
+        <img src="https://images.unsplash.com/photo-1672794444732-e007954a177c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUwNzQ1Njk&ixlib=rb-4.0.3&q=80" onclick="openFullImg(this.src)">
+      </div>
+    </div>
+  </div>
+ 
+
+  <script>
+    var full = document.getElementById("full");
+var fullImg = document.getElementById("fullImg");
+
+function openFullImg(pic) {
+    full.style.display = "flex";
+    fullImg.src = pic;
+}
+
+function closeFullImg() {
+    full.style.display = "none";
+}
+  </script>
+
+  
+
+  <%- include('../front/footer.ejs') %>

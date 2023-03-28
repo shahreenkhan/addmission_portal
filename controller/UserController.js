@@ -1,6 +1,7 @@
 const cloudinary = require('cloudinary').v2;
 const UserModel = require('../models/User')
 const bcrypt = require('bcrypt');
+const config = require('config');
 const jwt = require('jsonwebtoken');
 const nodemailer = require("nodemailer");
 const randomString = require("randomstring");
@@ -126,7 +127,7 @@ class UserController{
                 const data = await UserModel.updateOne({email:email},{$set:{token:randomString}});
                 sendResetPassword(userData.name,userData.email,randomString);
 
-                res.status(400).send({success:false,msg:"Please check your email amd reset your Password !"})
+                res.status(400).send({success:false,msg:"Please check your email and reset your Password !"})
             }
             else{
                 res.status(400).send({success:false,msg:"This email does not exists !"})
@@ -151,23 +152,43 @@ class UserController{
 
                     });
 
-                    const mailOptions ={
+                    const mailOptions = {
                         from:config.emailUser,
                         to:email,
                         subject:'For Reset password',
-                        html:'<p> Hello '+name+', Please copy the link <a herf="?token='+token+'">and reset yourt password</a> '
+                        html:'<p> Hello '+name+', Please copy the link and <a herf="http://localhost:3000/reset_password?token='+token+'"> reset your password</a> '
                     }
                     transporter.sendMail(mailOptions,function(error,info){
                         if (error) {
                            console.log(error);
                         } else {
-                            console.log("Mail has been sent:-",info.response)
+                            console.log("Mail has been sent :-",info.response)
                         }
                     });
         } catch (error) {
-            console.log(err)
+            res.status(400).send({success:false,message:error.message});
         }
     }
+    static ResetPasword = async(req,res)=>{
+        try {
+            const token = req.query.token;
+            const tokenData = await  UserModel.findOne({ token:token });
+            if (tokenData) {
+                const password = req.body.password;
+                const newHashpaswd = await bcrypt.hash(newpassword, salt);
+                const userData =   await UserModel.findByIdAndUpdate(user.id, {
+                    $set: { password: newHashpaswd , token:''}
+                  },{new:true});
+                  res.status(200).send({success:true,message:"User Password has been reset",data:userData})
+            }
+            else{
+                res.status(400).send({success:true,message:"This link has been expired!"});
+            }
+        } catch (error) {
+            res.status(400).send({success:false,message:error.message});
+        }
+    }
+    
     // static update = async (req, res) => {
     //     try {
     //       res.render('forgotpassword', { message: req.flash('error') });
@@ -221,6 +242,40 @@ static ViewDetails = async (req, res) => {
     res.render('admin/viewuser_detail', { n: name, e: email, id: _id, d: data })
 }
 
+static CallBack = async (req, res) => {
+    try { 
+        // console.log(req.user.displayName)
+        const checkuser = await UserModel.findOne({email:req.user.emails[0].value}) 
+        if(checkuser){
+            if (checkuser.role == 'user') {
+                //verifytoken
+                const token = jwt.sign({ userId: checkuser._id },'ashreen1997', { expiresIn: '100m' });
+                // console.log(token)
+                res.cookie('token', token)
+                res.redirect('/dashboard')
+            }
+        }else{
+            const result = await UserModel({
+            name: req.user.displayName,
+            email: req.user.emails[0].value,
+            
+        })
+        await result.save()
+        const user = await UserModel.findOne({ email:req.user.emails[0].value})
+        if (user.role == 'user') {
+            //verifytoken
+            const token = jwt.sign({ userId: user._id },"ashreen1997", { expiresIn: '100m' });
+            // console.log(token)
+            res.cookie('token', token)
+            res.redirect('/dashboard')
+        }
+        }
+        
+    } catch (error) {
+        console.log(error)
+
+    }
+}
 
 }
 module.exports = UserController

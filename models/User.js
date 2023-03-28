@@ -32,7 +32,12 @@ const UserSchema =new mongoose.Schema({
     resetLink:{
         data:String,
         default:''
-    }
+    },
+    // token:{
+    //     type:String,
+    //     default:''
+
+    // }
     
 
 

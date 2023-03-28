@@ -9,10 +9,12 @@ class FrontendController{
         const mtech = await CourseModel.findOne({user_id:_id, course: 'M.TECH'});
         const mba = await CourseModel.findOne({user_id:_id, course: 'MBA'});
         res.render('front/dashboard', { n: name, e: email, id: _id, b: btech, m: mtech, a: mba })
+        
     } catch(err){
         console.log(err)
     }
-}
+    }
+
 
     static display = async(req,res)=>{
         const{_id}=req.data1
@@ -95,6 +97,31 @@ class FrontendController{
         }catch(err){
             console.log(err)
         }
+    }
+     static Contact = async(req,res)=>{
+        try{
+        res.render('front/contact')
+        
+    } catch(err){
+        console.log(err)
+    }
+    }
+
+    static Gallery = async(req,res)=>{
+        try{
+        res.render('front/gallery')
+        
+    } catch(err){
+        console.log(err)
+    }
+    }
+    static About = async(req,res)=>{
+        try{
+        res.render('front/about')
+        
+    } catch(err){
+        console.log(err)
+    }
     }
    
   
